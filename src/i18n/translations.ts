@@ -1,0 +1,206 @@
+export type Lang = 'fr' | 'en'
+
+const t = {
+  fr: {
+    // Nav
+    home: 'Accueil',
+    catalog: 'Catalogue',
+    businesses: 'Partenaires',
+    cart: 'Panier',
+    profile: 'Mon Profil',
+    logout: 'Déconnexion',
+    search: 'Rechercher...',
+
+    // Hero
+    heroTitle: 'Bienvenue chez Darr-Albaraka',
+    heroSubtitle: 'Votre marketplace de confiance — Électronique, Véhicules, Mode & plus',
+    heroBtn: 'Explorer le catalogue',
+    heroBtn2: 'Nos partenaires',
+
+    // Categories
+    categoriesTitle: 'Catégories',
+    categoriesSubtitle: 'Explorez notre large sélection',
+    electronics: 'Électronique',
+    vehicles: 'Véhicules',
+    clothing: 'Vêtements',
+    food: 'Alimentation',
+    seeAll: 'Voir tout',
+
+    // Products
+    featuredTitle: 'Produits en vedette',
+    featuredSubtitle: 'Sélectionnés pour vous',
+    addToCart: 'Ajouter au panier',
+    buyNow: 'Acheter',
+    outOfStock: 'Rupture de stock',
+    inStock: 'En stock',
+    details: 'Voir les détails',
+    noProducts: 'Aucun produit trouvé',
+
+    // Cart
+    cartTitle: 'Mon Panier',
+    cartEmpty: 'Votre panier est vide',
+    cartContinue: 'Continuer mes achats',
+    quantity: 'Quantité',
+    remove: 'Supprimer',
+    subtotal: 'Sous-total',
+    shipping: 'Livraison',
+    total: 'Total',
+    checkout: 'Commander',
+    free: 'Gratuit',
+
+    // Checkout
+    checkoutTitle: 'Finaliser la commande',
+    deliveryInfo: 'Informations de livraison',
+    fullName: 'Nom complet',
+    phone: 'Téléphone',
+    address: 'Adresse',
+    city: 'Ville',
+    paymentMethod: 'Mode de paiement',
+    cashOnDelivery: 'Paiement à la livraison',
+    onlinePayment: 'Paiement en ligne (Carte)',
+    placeOrder: 'Confirmer la commande',
+    orderSuccess: 'Commande confirmée !',
+    orderSuccessMsg: 'Merci pour votre commande. Vous serez contacté(e) bientôt.',
+
+    // Businesses
+    businessesTitle: 'Nos Partenaires',
+    businessesSubtitle: 'Des boutiques de confiance',
+    visitStore: 'Visiter la boutique',
+    products: 'produits',
+
+    // Profile
+    profileTitle: 'Mon Profil',
+    orders: 'Mes Commandes',
+    noOrders: 'Aucune commande pour l\'instant',
+    orderNumber: 'Commande',
+    orderDate: 'Date',
+    orderStatus: 'Statut',
+    orderTotal: 'Montant',
+    pending: 'En attente',
+    confirmed: 'Confirmée',
+    delivered: 'Livrée',
+    cancelled: 'Annulée',
+    personalInfo: 'Informations personnelles',
+    email: 'Email',
+    member: 'Membre depuis',
+
+    // Catalog
+    catalogTitle: 'Catalogue',
+    filters: 'Filtres',
+    allCategories: 'Toutes les catégories',
+    sortBy: 'Trier par',
+    priceAsc: 'Prix croissant',
+    priceDesc: 'Prix décroissant',
+    newest: 'Plus récents',
+    popular: 'Populaires',
+    clearFilters: 'Effacer les filtres',
+    results: 'résultats',
+
+    // Partners section on home
+    partnersTitle: 'Boutiques Partenaires',
+    partnersSubtitle: 'Découvrez nos commerces affiliés',
+
+    // Footer
+    footerDesc: 'Votre marketplace de confiance en Afrique de l\'Ouest.',
+    footerLinks: 'Liens utiles',
+    footerContact: 'Contact',
+    footerRights: '© 2026 Darr-Albaraka. Tous droits réservés.',
+  },
+  en: {
+    home: 'Home',
+    catalog: 'Catalog',
+    businesses: 'Partners',
+    cart: 'Cart',
+    profile: 'My Profile',
+    logout: 'Sign Out',
+    search: 'Search...',
+
+    heroTitle: 'Welcome to Darr-Albaraka',
+    heroSubtitle: 'Your trusted marketplace — Electronics, Vehicles, Fashion & more',
+    heroBtn: 'Explore catalog',
+    heroBtn2: 'Our partners',
+
+    categoriesTitle: 'Categories',
+    categoriesSubtitle: 'Browse our wide selection',
+    electronics: 'Electronics',
+    vehicles: 'Vehicles',
+    clothing: 'Clothing',
+    food: 'Food',
+    seeAll: 'See all',
+
+    featuredTitle: 'Featured Products',
+    featuredSubtitle: 'Handpicked for you',
+    addToCart: 'Add to cart',
+    buyNow: 'Buy now',
+    outOfStock: 'Out of stock',
+    inStock: 'In stock',
+    details: 'View details',
+    noProducts: 'No products found',
+
+    cartTitle: 'My Cart',
+    cartEmpty: 'Your cart is empty',
+    cartContinue: 'Continue shopping',
+    quantity: 'Quantity',
+    remove: 'Remove',
+    subtotal: 'Subtotal',
+    shipping: 'Shipping',
+    total: 'Total',
+    checkout: 'Checkout',
+    free: 'Free',
+
+    checkoutTitle: 'Complete Order',
+    deliveryInfo: 'Delivery Information',
+    fullName: 'Full Name',
+    phone: 'Phone',
+    address: 'Address',
+    city: 'City',
+    paymentMethod: 'Payment Method',
+    cashOnDelivery: 'Cash on Delivery',
+    onlinePayment: 'Online Payment (Card)',
+    placeOrder: 'Place Order',
+    orderSuccess: 'Order Confirmed!',
+    orderSuccessMsg: 'Thank you for your order. You will be contacted soon.',
+
+    businessesTitle: 'Our Partners',
+    businessesSubtitle: 'Trusted stores',
+    visitStore: 'Visit store',
+    products: 'products',
+
+    profileTitle: 'My Profile',
+    orders: 'My Orders',
+    noOrders: 'No orders yet',
+    orderNumber: 'Order',
+    orderDate: 'Date',
+    orderStatus: 'Status',
+    orderTotal: 'Amount',
+    pending: 'Pending',
+    confirmed: 'Confirmed',
+    delivered: 'Delivered',
+    cancelled: 'Cancelled',
+    personalInfo: 'Personal Information',
+    email: 'Email',
+    member: 'Member since',
+
+    catalogTitle: 'Catalog',
+    filters: 'Filters',
+    allCategories: 'All Categories',
+    sortBy: 'Sort by',
+    priceAsc: 'Price: Low to High',
+    priceDesc: 'Price: High to Low',
+    newest: 'Newest',
+    popular: 'Most Popular',
+    clearFilters: 'Clear filters',
+    results: 'results',
+
+    partnersTitle: 'Partner Stores',
+    partnersSubtitle: 'Discover our affiliated businesses',
+
+    footerDesc: 'Your trusted marketplace in West Africa.',
+    footerLinks: 'Quick Links',
+    footerContact: 'Contact',
+    footerRights: '© 2026 Darr-Albaraka. All rights reserved.',
+  },
+} as const
+
+export type TKey = keyof typeof t.fr
+export default t
