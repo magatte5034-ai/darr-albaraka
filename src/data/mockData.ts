@@ -77,7 +77,7 @@ export const PRODUCTS: MockProduct[] = [
     id: 'p-9', categoryId: 'cat-1', categoryName: 'Électronique',
     title: 'Distributeur d\'Eau HUASHU - Chaud & Froid', titleEn: 'HUASHU Water Dispenser - Hot & Cold',
     price: 40000,
-    image: 'https://m.media-amazon.com/images/I/61Q3aFhiNsL._AC_SL1500_.jpg',
+    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d24?w=500&q=80',
     rating: 4.6, reviews: 24, stock: 10, featured: true,
     seller: 'Darr-Albaraka',
     badge: 'Nouveau',
