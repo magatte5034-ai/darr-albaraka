@@ -6,33 +6,43 @@ import { supabase } from '../lib/supabase'
  * Page de callback OAuth — Supabase redirige ici après Google Sign-In.
  * Route : /auth/callback
  *
- * Avec flowType:'pkce', Supabase doit d'abord échanger le ?code= contre
- * une session (async). On écoute onAuthStateChange au lieu d'appeler
- * getSession() immédiatement, qui pourrait retourner null trop tôt.
+ * Avec flowType:'pkce', Supabase inclut ?code= dans l'URL de redirect.
+ * On appelle exchangeCodeForSession(code) explicitement pour éviter
+ * tout problème de timing avec detectSessionInUrl sur Vercel/production.
  */
 export default function AuthCallback() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_IN' && session) {
-        navigate('/', { replace: true })
-      } else if (event === 'SIGNED_OUT' || (!session && event !== 'INITIAL_SESSION')) {
-        navigate('/login', { replace: true })
-      }
-    })
+    const params = new URLSearchParams(window.location.search)
+    const code = params.get('code')
+    const errorParam = params.get('error')
+    const errorDescription = params.get('error_description')
 
-    // Fallback : si detectSessionInUrl a déjà traité le code avant le mount
-    supabase.auth.getSession().then(({ data, error }) => {
-      if (error) {
-        console.error('Auth callback error:', error.message)
-        navigate('/login?error=' + encodeURIComponent(error.message), { replace: true })
-      } else if (data.session) {
-        navigate('/', { replace: true })
-      }
-    })
+    // OAuth provider returned an error
+    if (errorParam) {
+      console.error('OAuth error:', errorParam, errorDescription)
+      navigate('/login?error=' + encodeURIComponent(errorDescription || errorParam), { replace: true })
+      return
+    }
 
-    return () => subscription.unsubscribe()
+    // PKCE: exchange the authorization code for a session
+    if (code) {
+      supabase.auth.exchangeCodeForSession(code).then(({ error }) => {
+        if (error) {
+          console.error('exchangeCodeForSession error:', error.message)
+          navigate('/login?error=' + encodeURIComponent(error.message), { replace: true })
+        } else {
+          navigate('/', { replace: true })
+        }
+      })
+      return
+    }
+
+    // No code in URL — check if a session already exists (e.g. page refresh)
+    supabase.auth.getSession().then(({ data }) => {
+      navigate(data.session ? '/' : '/login', { replace: true })
+    })
   }, [navigate])
 
   return (
@@ -47,6 +57,7 @@ export default function AuthCallback() {
     }}>
       <div style={{ fontSize: '40px' }}>🔐</div>
       <p style={{ color: '#4a7c2d', fontWeight: 600 }}>Connexion en cours...</p>
+      <p style={{ color: '#6b7280', fontSize: '14px' }}>Veuillez patienter…</p>
     </div>
   )
 }
