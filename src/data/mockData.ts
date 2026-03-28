@@ -74,6 +74,17 @@ export const CATEGORIES: MockCategory[] = [
 
 export const PRODUCTS: MockProduct[] = [
   {
+    id: 'p-9', categoryId: 'cat-1', categoryName: 'Électronique',
+    title: 'Distributeur d\'Eau HUASHU - Chaud & Froid', titleEn: 'HUASHU Water Dispenser - Hot & Cold',
+    price: 40000,
+    image: 'https://m.media-amazon.com/images/I/61Q3aFhiNsL._AC_SL1500_.jpg',
+    rating: 4.6, reviews: 24, stock: 10, featured: true,
+    seller: 'Darr-Albaraka',
+    badge: 'Nouveau',
+    description: 'Distributeur d\'eau de table HUASHU, eau chaude et froide, bouton de mise en marche/arrêt, maintien au chaud. Idéal pour bureau et maison. Compact et élégant, coloris noir et doré.',
+    descriptionEn: 'HUASHU tabletop water dispenser, hot and cold water, power on/off button, keep warm function. Ideal for office and home. Compact and elegant, black and gold design.',
+  },
+  {
     id: 'p-1', categoryId: 'cat-1', categoryName: 'Électronique',
     title: 'Smartphone Samsung Galaxy A54', titleEn: 'Samsung Galaxy A54 Smartphone',
     price: 185000, compareAtPrice: 210000,
