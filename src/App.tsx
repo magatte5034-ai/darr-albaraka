@@ -14,6 +14,7 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import CartPage from './pages/CartPage'
 import BusinessesPage from './pages/BusinessesPage'
 import ProfilePage from './pages/ProfilePage'
+import PaymentCallbackPage from './pages/PaymentCallbackPage'
 
 import Navbar from './components/Layout/Navbar'
 import Footer from './components/Layout/Footer'
@@ -66,6 +67,9 @@ function App() {
             {/* Public routes */}
             <Route path="/auth/callback" element={<AuthCallback />} />
             <Route path="/login" element={session ? <Navigate to="/" replace /> : <LoginPage />} />
+            {/* PayTech payment callbacks — accessibles sans connexion */}
+            <Route path="/payment/success" element={<PaymentCallbackPage type="success" />} />
+            <Route path="/payment/cancel" element={<PaymentCallbackPage type="cancel" />} />
 
             {/* Protected routes */}
             {session ? (
