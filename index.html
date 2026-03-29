@@ -2,9 +2,126 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Darr-Albaraka</title>
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- ✅ SEO : Titre principal -->
+    <title>Darr-Albaraka | Boutique en ligne Sénégal — Électronique, Mode & Plus</title>
+
+    <!-- ✅ SEO : Description (160 caractères max) -->
+    <meta name="description" content="Darr-Albaraka est votre marketplace en ligne au Sénégal. Achetez et vendez facilement : électronique, mode, voyages, et bien plus. Livraison à Dakar et partout au Sénégal." />
+
+    <!-- ✅ SEO : Mots-clés -->
+    <meta name="keywords" content="boutique en ligne Sénégal, e-commerce Dakar, achat en ligne Sénégal, marketplace Sénégal, Darr-Albaraka, produits électroniques Dakar, mode Sénégal, livraison Dakar, Wave Orange Money paiement en ligne" />
+
+    <!-- ✅ SEO : Auteur -->
+    <meta name="author" content="Darr-Albaraka" />
+
+    <!-- ✅ SEO : Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ SEO : URL canonique -->
+    <link rel="canonical" href="https://darr-albaraka.vercel.app/" />
+
+    <!-- ✅ Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://darr-albaraka.vercel.app/" />
+    <meta property="og:title" content="Darr-Albaraka | Boutique en ligne Sénégal" />
+    <meta property="og:description" content="Achetez en ligne au Sénégal avec Darr-Albaraka. Électronique, mode, voyages et plus encore. Paiement sécurisé via Wave, Orange Money et carte bancaire." />
+    <meta property="og:image" content="https://darr-albaraka.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Darr-Albaraka" />
+    <meta property="og:locale" content="fr_SN" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Darr-Albaraka | Boutique en ligne Sénégal" />
+    <meta name="twitter:description" content="Achetez en ligne au Sénégal. Électronique, mode, voyages. Paiement Wave, Orange Money, carte bancaire." />
+    <meta name="twitter:image" content="https://darr-albaraka.vercel.app/og-image.png" />
+
+    <!-- ✅ Mobile & PWA -->
+    <meta name="theme-color" content="#166534" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Darr-Albaraka" />
+
+    <!-- ✅ Géolocalisation (Sénégal) -->
+    <meta name="geo.region" content="SN" />
+    <meta name="geo.placename" content="Dakar, Sénégal" />
+
+    <!-- ✅ Préconnexion pour performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://supabase.co" />
+
+    <!-- ✅ JSON-LD : Données structurées pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://darr-albaraka.vercel.app/#organization",
+          "name": "Darr-Albaraka",
+          "url": "https://darr-albaraka.vercel.app",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://darr-albaraka.vercel.app/og-image.png"
+          },
+          "description": "Marketplace en ligne au Sénégal — électronique, mode, voyages et plus.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dakar",
+            "addressCountry": "SN"
+          },
+          "telephone": "+221777975034",
+          "areaServed": "SN",
+          "currenciesAccepted": "XOF",
+          "paymentAccepted": "Wave, Orange Money, Carte bancaire, Espèces"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://darr-albaraka.vercel.app/#website",
+          "url": "https://darr-albaraka.vercel.app",
+          "name": "Darr-Albaraka",
+          "description": "Boutique en ligne au Sénégal — achat facile et paiement sécurisé",
+          "publisher": {
+            "@id": "https://darr-albaraka.vercel.app/#organization"
+          },
+          "inLanguage": "fr",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://darr-albaraka.vercel.app/catalog?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "Store",
+          "@id": "https://darr-albaraka.vercel.app/#store",
+          "name": "Darr-Albaraka",
+          "url": "https://darr-albaraka.vercel.app",
+          "image": "https://darr-albaraka.vercel.app/og-image.png",
+          "description": "Votre marketplace en ligne au Sénégal. Livraison à Dakar et partout au Sénégal.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dakar",
+            "addressCountry": "SN"
+          },
+          "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+          },
+          "priceRange": "XOF"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
